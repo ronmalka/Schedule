@@ -31,6 +31,7 @@ def Schedule(start,classroomid,row):
         # insert to classroom
         courseid = int(course[0])
         courselength = int(course[2])
+        i=0
         dbcon.execute("UPDATE classrooms set current_course_id = ?,current_course_time_left =? where id = ?",
                       (courseid, courselength, classroomid,))
         dbcon.commit()
